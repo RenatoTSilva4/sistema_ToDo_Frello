@@ -1,11 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frello</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <main class="pagina-principal">
+      <section class="painel painel-esquerdo">
+        <div class="marca">
+          <div class="icone-marca">■</div>
+          <div class="nome-marca">ToDo</div>
+        </div>
+
+        <div class="conteudo-painel">
+          <h1>Effortlessly manage your tasks and activities.</h1>
+          <p>Log in to access your dashboard and manage your activities.</p>
+        </div>
+
+        <div class="rodape-painel">
+          <span>Copyright © 2025 ToDo LTD.</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </section>
+
+
+      <section class="painel painel-direito">
+        <div class="caixa-login">
+          <div class="cabecalho-login">
+            <h2>Welcome Back</h2>
+            <p>Enter your email and password to access your account.</p>
+          </div>
+
+          <form class="formulario-login">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="user@company.com" required/>
+
+            <label for="password">Password</label>
+            <div class="campo-senha">
+              <input type="password"id="password"placeholder="Enter password" required/>
+              <button type="button" class="alternar-senha">👁️</button>
+            </div>
+
+            <div class="linha-formulario">
+              <label class="rotulo-checkbox">
+                <input type="checkbox" />
+                Remember Me
+              </label>
+              <a href="#" class="link-esqueci">Forgot Your Password?</a>
+            </div>
+
+            <button type="submit" class="botao-principal">Log In</button>
+            <div class="divisor">
+              <span>OR LOGIN WITH</span>
+            </div>
+
+            <div class="botoes-sociais">
+              <button type="button" class="botao-social">
+                <span class="icone-social">G</span>
+                Google
+              </button>
+              <button type="button" class="botao-social">
+                <span class="icone-social"></span>
+                Apple
+              </button>
+            </div>
+          </form>
+
+          <p class="texto-registro">
+            Don't Have An Account? <a href="#">Register Now.</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </body>
 </html>
