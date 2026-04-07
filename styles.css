@@ -76,25 +76,29 @@ body {
 }
 
 .conteudo-painel h1 {
-    font-size: 2.5rem;
-    line-height: 1.08;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
 }
 
 .conteudo-painel p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.97rem;
     line-height: 1.7;
-    max-width: 420px;
 }
 
 .rodape-painel {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
     gap: 16px;
     flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 24px;
 }
 
 .rodape-painel a {
@@ -109,8 +113,8 @@ body {
 /* ── Painel Direito ────────────────────────*/
 .painel-direito {
     background: #ffffff;
-    color: #111827;
     align-items: center;
+    justify-content: center;
 }
 
 /* ── Caixa de Login ────────────────────────*/
@@ -120,14 +124,28 @@ body {
     margin: auto;
 }
 
+/* Brand para mobile - escondida no desktop */
+.marca-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
 .cabecalho-login h2 {
-    font-size: 2rem;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    color: #111827;
+
 }
 
 .cabecalho-login p {
     color: #6b7280;
     line-height: 1.75;
+    font-size: 0.9rem;
 }
 
 /* ── Form ───────────────────────────────────────────────── */
@@ -169,7 +187,7 @@ body {
 }
 
 .campo-senha input {
-    padding-right: 52px;
+    padding-right: 46px;
 }
 
 .alternar-senha {
@@ -182,6 +200,10 @@ body {
     font-size: 1rem;
     cursor: pointer;
     color: #6b7280;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
 }
 
 .linha-formulario {
@@ -236,7 +258,9 @@ body {
 .link-esqueci {
     color: #3348ff;
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .link-esqueci:hover {
@@ -269,6 +293,8 @@ body {
     gap: 12px;
     color: #9ca3af;
     font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .divisor::before,
@@ -281,7 +307,7 @@ body {
 
 .botoes-sociais {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
@@ -289,33 +315,42 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 14px 16px;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
     background: #ffffff;
     color: #111827;
-    font-size: 0.95rem;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.botao-social:hover {
+    border-color: #d1d5db;
+    background: #f9fafb;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
 .icone-social {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     line-height: 0;
-    font-size: 1rem;
 }
 
-.icone-social img,
 .icone-social svg {
     width: 20px;
     height: 20px;
     display: block;
 }
 
+/*────────── Texto do footer ──────────*/
 .texto-registro {
     text-align: center;
     color: #6b7280;
@@ -332,55 +367,96 @@ body {
     text-decoration: underline;
 }
 
+/* ─────────────────────────────────────────────────────────
+   Tela responsiva no Tablet(≤ 1024px)
+   ───────────────────────────────────────────────────────── */
+
 @media (max-width: 1024px) {
     .conteudo-painel h1 {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
 }
 
 /* ─────────────────────────────────────────────────────────
-   RESPONSIVE — Mobile (≤ 768px)
+   Tela responsiva no Mobile (≤ 768px)
    ───────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-
     body {
         background: #f3f4f6;
     }
-
+ 
     .pagina-principal {
         display: block;
         min-height: 100vh;
     }
-
+ 
+    /* Esconde opainel azul no mobile */
     .painel-esquerdo {
         display: none;
     }
-
+ 
+    /* Painel direito ocupa a tela inteira */
     .painel-direito {
         width: 100%;
         min-height: 100vh;
         padding: 40px 16px;
+        background: #f3f4f6;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 48px;
     }
-
+ 
+    /* Card flutuante no mobile */
+    .caixa-login {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 36px 28px;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+        max-width: 420px;
+        width: 100%;
+    }
+ 
+    /* Mostra a brand no mobile */
+    .marca-mobile {
+        display: flex;
+    }
+ 
+    .cabecalho-login h2 {
+        text-align: center;
+    }
+ 
+    .cabecalho-login p {
+        text-align: center;
+    }
 }
 
+/* ─────────────────────────────────────────────────────────
+   Tela responsiva em celulares menores (≤ 480px)
+   ───────────────────────────────────────────────────────── */
+
 @media (max-width: 480px) {
-    .painel {
-        padding: 24px 16px;
+    .painel-direito {
+        padding: 24px 12px;
     }
-
-    .conteudo-painel h1 {
-        font-size: 1.7rem;
+ 
+    .caixa-login {
+        padding: 28px 20px;
+        border-radius: 16px;
     }
-
-    .formulario-login input[type="email"],
-    .formulario-login input[type="password"] {
-        padding: 14px 14px;
+ 
+    .botoes-sociais {
+        grid-template-columns: 1fr;
     }
-
-    .botao-principal,
-    .botao-social {
-        padding: 14px 16px;
+ 
+    .linha-formulario {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+ 
+    .link-esqueci {
+        align-self: flex-end;
     }
 }
