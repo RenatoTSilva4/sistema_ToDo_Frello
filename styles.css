@@ -14,12 +14,13 @@ body {
     color: #1f2937;
 }
 
+/* ── Layout ─────────────────────────────────*/
 .pagina-principal {
     display: flex;
     min-height: 100vh;
-    overflow: hidden;
 }
 
+/* ── Painéis ────────────────────────────────*/
 .painel {
     width: 50%;
     display: flex;
@@ -28,6 +29,7 @@ body {
     padding: 48px;
 }
 
+/* ── Painel Esquerdo ────────────────────────*/
 .painel-esquerdo {
     background: #3348ff;
     color: #ffffff;
@@ -90,12 +92,14 @@ body {
     text-decoration: underline;
 }
 
+/* ── Painel Direito ────────────────────────*/
 .painel-direito {
     background: #ffffff;
     color: #111827;
     align-items: center;
 }
 
+/* ── Caixa de Login ────────────────────────*/
 .caixa-login {
     width: 100%;
     max-width: 420px;
@@ -112,6 +116,7 @@ body {
     line-height: 1.75;
 }
 
+/* ── Form ───────────────────────────────────────────────── */
 .formulario-login {
     margin-top: 32px;
     display: grid;
