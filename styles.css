@@ -191,18 +191,46 @@ body {
     gap: 12px;
     flex-wrap: wrap;
 }
-
 .rotulo-checkbox {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: #374151;
+    cursor: pointer;
+    user-select: none;
 }
 
-.rotulo-checkbox input {
+.checkbox-input { 
+    display: none; 
+}
+
+.checkbox-box {
     width: 16px;
     height: 16px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 4px;
+    background: #ffffff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.checkbox-input:checked + .checkbox-box {
+    background: #3348ff;
+    border-color: #3348ff;
+}
+
+.checkbox-input:checked + .checkbox-box::after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: translateY(-1px) rotate(-45deg);
 }
 
 .link-esqueci {
