@@ -338,45 +338,31 @@ body {
     }
 }
 
+/* ─────────────────────────────────────────────────────────
+   RESPONSIVE — Mobile (≤ 768px)
+   ───────────────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
-    .pagina-principal {
-        flex-direction: column;
+
+    body {
+        background: #f3f4f6;
     }
 
-    .painel {
-        width: 100%;
-        padding: 32px 24px;
+    .pagina-principal {
+        display: block;
+        min-height: 100vh;
     }
 
     .painel-esquerdo {
-        min-height: 320px;
+        display: none;
     }
 
     .painel-direito {
-        min-height: auto;
-    }
-
-    .conteudo-painel h1 {
-        font-size: 1.9rem;
-    }
-
-    .caixa-login {
-        max-width: 100%;
-    }
-
-    .botoes-sociais {
-        grid-template-columns: 1fr;
-    }
-
-    .linha-formulario {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .link-esqueci {
-        text-align: right;
         width: 100%;
+        min-height: 100vh;
+        padding: 40px 16px;
     }
+
 }
 
 @media (max-width: 480px) {
