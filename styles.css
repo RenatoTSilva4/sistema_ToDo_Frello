@@ -12,6 +12,7 @@ body {
     font-family: Inter, Arial, sans-serif;
     background: #f5f7fb;
     color: #1f2937;
+    overflow-x: hidden;
 }
 
 /* ── Layout ─────────────────────────────────*/
