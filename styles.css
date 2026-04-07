@@ -39,23 +39,36 @@ body {
 .marca {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-weight: 700;
     font-size: 1rem;
+    text-decoration: none;
+    color: white;
 }
 
 .icone-marca {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.18);
-    display: grid;
-    place-items: center;
-    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-marca--azul {
+    background: #3348ff;
 }
 
 .nome-marca {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nome-marca--escuro {
+    color: #111827;
 }
 
 .conteudo-painel {
