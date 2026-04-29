@@ -10,7 +10,302 @@
     <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
+    <style>
+        /* ─────────────────────────────────────────────────────────
+   ToDo Dashboard — dashboard.css
+   ───────────────────────────────────────────────────────── */
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+        
+html, body {
+  min-height: 100%;
+  font-family: Inter, Arial, sans-serif;
+  background: #f0f2f7;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+button { cursor: pointer; border: none; font-family: inherit; }
+
+/* ── Header ─────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 56px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.header__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #3348ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+.header__logout {
+  padding: 7px 18px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: border-color 0.16s, background 0.16s;
+}
+
+.header__logout:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+/* ── Main ───────────────────────────────────────────────── */
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 36px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+}
+
+.card__hello {
+  margin-bottom: 24px;
+}
+
+.card__hello h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.card__email {
+  color: #3348ff;
+  font-weight: 700;
+}
+
+.card__hello p {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+/* ── Input row ──────────────────────────────────────────── */
+.card__input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.task-input {
+  flex: 1;
+  height: 42px;
+  padding: 0 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.16s, box-shadow 0.16s;
+}
+
+.task-input::placeholder { color: #9ca3af; }
+
+.task-input:focus {
+  border-color: #3348ff;
+  box-shadow: 0 0 0 3px rgba(51,72,255,0.10);
+}
+
+.task-input.input-erro {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.10) !important;
+}
+
+.btn-add {
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 9px;
+  background: #3348ff;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.16s, box-shadow 0.16s;
+  box-shadow: 0 2px 10px rgba(51,72,255,0.24);
+}
+
+.btn-add:hover {
+  background: #2337ee;
+  box-shadow: 0 4px 16px rgba(51,72,255,0.32);
+}
+
+/* Task error */
+.task-erro {
+  display: block;
+  font-size: 0.78rem;
+  color: #ef4444;
+  min-height: 1.1em;
+  margin-bottom: 12px;
+}
+
+/* ── Task list ──────────────────────────────────────────── */
+.task-list {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Empty state */
+.task-vazia {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #9ca3af;
+  padding: 16px 0 4px;
+}
+
+/* Task item */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #f8fafc;
+  border: 1px solid #f0f2f5;
+  transition: background 0.14s;
+  animation: fadeIn 0.18s ease;
+}
+
+.task-item:hover { background: #f3f4f6; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom checkbox */
+.task-item__checkbox {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.14s, border-color 0.14s;
+}
+
+.task-item__checkbox:checked {
+  background: #3348ff;
+  border-color: #3348ff;
+}
+
+.task-item__checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+}
+
+/* Task label */
+.task-item__label {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #374151;
+  word-break: break-word;
+  transition: color 0.14s, opacity 0.14s;
+}
+
+.task-item--concluida .task-item__label {
+  text-decoration: line-through;
+  color: #9ca3af;
+  opacity: 0.7;
+}
+
+/* Remove button */
+.task-item__remove {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.14s, background 0.14s, color 0.14s;
+}
+
+.task-item:hover .task-item__remove { opacity: 1; }
+
+.task-item__remove:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .main { padding: 24px 12px; }
+
+  .card {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .card__hello h1 { font-size: 1.2rem; }
+}
+
+@media (max-width: 400px) {
+  .header { padding: 0 16px; }
+  .btn-add { padding: 0 14px; }
+}
+    </style>
     <!-- ══════════ HEADER -->
     <header class="header">
       <a href="dashboard.html" class="header__brand">
