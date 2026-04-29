@@ -460,3 +460,20 @@ body {
         align-self: flex-end;
     }
 }
+
+/* ── Validation states ──────────────────────────────────── */
+.campo-erro .field__input,
+.campo-erro input[type="email"],
+.campo-erro input[type="password"] {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+ 
+.msg-erro {
+    display: block;
+    font-size: 0.78rem;
+    color: #ef4444;
+    margin-top: 4px;
+    min-height: 1em;
+    font-weight: 400;
+}
