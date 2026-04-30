@@ -462,9 +462,17 @@ body {
 }
 
 /* ── Validation states ──────────────────────────────────── */
+.formulario-login .grupo-campo input { 
+    width: 100%;
+    border: 1.5px solid #e5e7eb;
+    appearance: none;
+    height: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
 .campo-erro .field__input,
-.campo-erro input[type="email"],
-.campo-erro input[type="password"] {
+.campo-erro .grupo-campo input,
+.campo-erro input {
     border-color: #ef4444 !important;
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
 }
