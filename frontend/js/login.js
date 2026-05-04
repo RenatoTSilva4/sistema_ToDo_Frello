@@ -3,18 +3,18 @@
 
   const API_URL = 'http://localhost:3001/users';
 
-  // Se já estiver logado → vai pro dashboard
-  if (localStorage.getItem('todo_user')) {
-    window.location.href = 'dashboard.html';
-    return;
-  }
-
   const form        = document.getElementById('formLogin');
   const emailInput  = document.getElementById('email');
   const passInput   = document.getElementById('password');
   const erroEmail   = document.getElementById('erroEmail');
   const erroPass    = document.getElementById('erroPassword');
   const btnVerSenha = document.getElementById('btnVerSenha');
+  const msgSucesso  = document.getElementById('msgSucesso');
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('registered') === 'true') {
+    msgSucesso.textContent = 'Account created successfully! You can now log in.';
+  }
 
   // ── Mostrar/ocultar senha ─────────────────────────────
   btnVerSenha.addEventListener('click', function () {
@@ -37,7 +37,7 @@
   emailInput.addEventListener('input', () => clearError(emailInput, erroEmail));
   passInput.addEventListener('input', () => clearError(passInput, erroPass));
 
-  // ── SUBMIT (LOGIN COM API - CORRIGIDO) ─────────────────
+  // submi(login com API fake)
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -47,11 +47,10 @@
     const password = passInput.value;
 
     try {
-      // 🔥 busca só pelo email
-      const res = await fetch(`${API_URL}?email=${email}`);
+      // busca apenas pelo email
+      const res = await fetch(`${API_URL}?email=${encodeURIComponent(email)}`);
       const users = await res.json();
 
-      // usuário não encontrado
       if (users.length === 0) {
         showError(emailInput, erroEmail, 'User not found');
         return;
@@ -59,14 +58,14 @@
 
       const user = users[0];
 
-      // 🔥 valida senha no JS
+      // valida senha no js
       if (user.password !== password) {
         showError(passInput, erroPass, 'Invalid password');
         return;
       }
 
-      // Login OK
-      localStorage.setItem('todo_user', email);
+      // ✅ Login OK
+      localStorage.setItem('todo_user', user.email);
       window.location.href = 'dashboard.html';
 
     } catch (err) {
@@ -74,6 +73,7 @@
       showError(passInput, erroPass, 'Server error. Try again.');
     }
   });
+
 
   // ── Validação ─────────────────────────────────────────
   function validate() {

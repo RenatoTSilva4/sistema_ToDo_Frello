@@ -4,12 +4,6 @@
   const STORAGE_USER  = 'todo_user';
   const STORAGE_TASKS = 'todo_tasks';
 
-  const userEmail = localStorage.getItem(STORAGE_USER);
-  if (!userEmail) {
-    window.location.href = 'index.html';
-    return;
-  }
-
   // ── DOM refs ─────────────────────────────────────────────
   const emailEl    = document.getElementById('userEmail');
   const taskInput  = document.getElementById('taskInput');

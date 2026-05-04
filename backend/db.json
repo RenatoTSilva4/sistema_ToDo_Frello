@@ -1,10 +1,29 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "teste@email.com",
       "password": "12345678"
+    },
+    {
+      "name": "Renato Da Silva",
+      "email": "renato@gmail.com",
+      "password": "260508Re.",
+      "id": "l4C9Gt7EGLQ"
+    },
+    {
+      "name": "Carlos alberto",
+      "email": "carlos@gmail.com",
+      "password": "121378Rs.",
+      "id": "L34IpoPMYAs"
+    },
+    {
+      "name": "Rodrigo machado",
+      "email": "rodrigo@gmail.com",
+      "password": "240508Lb.",
+      "id": "ARN7nY82lAE"
     }
   ],
-  "tasks": []
+  "tasks": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
