@@ -24,6 +24,5 @@
       "id": "ARN7nY82lAE"
     }
   ],
-  "tasks": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "tasks": []
 }
