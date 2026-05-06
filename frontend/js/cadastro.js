@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const API_URL = 'http://localhost:3001/users';
+  const API_URL = 'http://localhost:3000/users';
 
   // ── DOM refs ──────────────────────────────────────────────
   const form           = document.getElementById('formCadastro');

@@ -22,7 +22,20 @@
       "email": "rodrigo@gmail.com",
       "password": "240508Lb.",
       "id": "ARN7nY82lAE"
+    },
+    {
+      "name": "Fabio",
+      "email": "fabio@gmail.com",
+      "password": "121468Fb.",
+      "id": "nE5lF3_kiMk"
+    },
+    {
+      "name": "tiago",
+      "email": "tiago@gmail.com",
+      "password": "1234tiago.",
+      "id": "WoossmtHlIM"
     }
   ],
-  "tasks": []
+  "tasks": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
