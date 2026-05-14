@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo — Create Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/styles.css" />
     <style>
       .barra-forca {
@@ -21,7 +24,9 @@
         height: 100%;
         border-radius: 4px;
         width: 0;
-        transition: width 0.3s ease, background 0.3s ease;
+        transition:
+          width 0.3s ease,
+          background 0.3s ease;
       }
 
       .rotulo-forca {
@@ -33,16 +38,26 @@
     </style>
   </head>
   <body>
-
     <main class="pagina-principal">
-
       <!-- ══════════ PAINEL ESQUERDO (desktop only) -->
       <section class="painel painel-esquerdo">
         <div class="marca">
           <div class="icone-marca">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2.2"/>
-              <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2.2" />
+              <path
+                d="M8 12l3 3 5-5"
+                stroke="white"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
           <div class="nome-marca">ToDo</div>
@@ -62,13 +77,24 @@
       <!-- ══════════ PAINEL DIREITO (form) -->
       <section class="painel painel-direito">
         <div class="caixa-login">
-
           <!-- Brand visível apenas no mobile -->
           <div class="marca-mobile">
             <div class="icone-marca icone-marca--azul">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2.2"/>
-                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2.2" />
+                <path
+                  d="M8 12l3 3 5-5"
+                  stroke="white"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
             <div class="nome-marca nome-marca--escuro">ToDo</div>
@@ -80,17 +106,10 @@
           </div>
 
           <form class="formulario-login" id="formCadastro" novalidate>
-
             <!-- Full Name -->
             <div class="grupo-campo">
               <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="John Doe"
-                autocomplete="name"
-              />
+              <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" />
               <span class="msg-erro" id="erroName"></span>
             </div>
 
@@ -118,10 +137,21 @@
                   placeholder="Create a password"
                   autocomplete="new-password"
                 />
-                <button type="button" class="alternar-senha" id="btnVerSenha" aria-label="Toggle password visibility">
+                <button
+                  type="button"
+                  class="alternar-senha"
+                  id="btnVerSenha"
+                  aria-label="Toggle password visibility"
+                >
                   <svg id="iconeOlho" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="1.8"/>
+                    <path
+                      d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                      stroke="#9CA3AF"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="1.8" />
                   </svg>
                 </button>
               </div>
@@ -143,10 +173,21 @@
                   placeholder="Repeat your password"
                   autocomplete="new-password"
                 />
-                <button type="button" class="alternar-senha" id="btnVerConfirm" aria-label="Toggle password visibility">
+                <button
+                  type="button"
+                  class="alternar-senha"
+                  id="btnVerConfirm"
+                  aria-label="Toggle password visibility"
+                >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="1.8"/>
+                    <path
+                      d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                      stroke="#9CA3AF"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="1.8" />
                   </svg>
                 </button>
               </div>
@@ -154,18 +195,13 @@
             </div>
 
             <button type="submit" class="botao-principal" id="btnCadastrar">Create Account</button>
-
           </form>
 
-          <p class="texto-registro">
-            Already have an account? <a href="index.html">Log In.</a>
-          </p>
-
+          <p class="texto-registro">Already have an account? <a href="index.html">Log In.</a></p>
         </div>
       </section>
-
     </main>
 
-    <script src="../js/cadastro.js"></script>
+    <script type="module" src="../js/cadastro.js"></script>
   </body>
 </html>

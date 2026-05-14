@@ -1,26 +1,34 @@
+import { STORAGE_USER } from './utils/storage.js';
+import { loadTasks, addTask, toggleTask, removeTask } from './services/taskService.js';
+
 (function () {
   'use strict';
 
-  const STORAGE_USER  = 'todo_user';
-  const STORAGE_TASKS = 'todo_tasks';
+  const user = JSON.parse(localStorage.getItem(STORAGE_USER));
 
-  // ── DOM refs ─────────────────────────────────────────────
-  const emailEl    = document.getElementById('userEmail');
-  const taskInput  = document.getElementById('taskInput');
-  const btnAdd     = document.getElementById('btnAdd');
-  const taskList   = document.getElementById('taskList');
-  const erroTask   = document.getElementById('erroTask');
-  const btnLogout  = document.getElementById('btnLogout');
+  if (!user) {
+    window.location.href = 'index.html';
+    return;
+  }
 
-  emailEl.textContent = userEmail;
+  const userId = String(user.id);
 
-  let tasks = loadTasks();
-  renderList();
+  // DOM
+  const emailEl = document.getElementById('userEmail');
+  const taskInput = document.getElementById('taskInput');
+  const btnAdd = document.getElementById('btnAdd');
+  const taskList = document.getElementById('taskList');
+  const erroTask = document.getElementById('erroTask');
+  const btnLogout = document.getElementById('btnLogout');
 
-  btnAdd.addEventListener('click', addTask);
+  emailEl.textContent = user.email;
+
+  let tasks = [];
+
+  btnAdd.addEventListener('click', handleAddTask);
 
   taskInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') addTask();
+    if (e.key === 'Enter') handleAddTask();
   });
 
   taskInput.addEventListener('input', function () {
@@ -32,19 +40,36 @@
     window.location.href = 'index.html';
   });
 
-  function addTask() {
+  async function refreshTasks() {
+    tasks = await loadTasks(userId);
+    renderList();
+  }
+
+  async function handleAddTask() {
     const text = taskInput.value.trim();
+
     if (!text) {
       showTaskError('Please enter a task before adding.');
       return;
     }
 
-    tasks.push({ id: Date.now(), text: text, done: false });
-    saveTasks();
-    renderList();
+    await addTask(userId, text);
     taskInput.value = '';
-    taskInput.focus();
+    clearTaskError();
+    await refreshTasks();
   }
+
+  function showTaskError(msg) {
+    erroTask.textContent = msg;
+    taskInput.classList.add('input-erro');
+  }
+
+  function clearTaskError() {
+    erroTask.textContent = '';
+    taskInput.classList.remove('input-erro');
+  }
+
+  refreshTasks();
 
   function renderList() {
     taskList.innerHTML = '';
@@ -69,7 +94,7 @@
       check.checked = task.done;
       check.setAttribute('aria-label', 'Mark task as done');
       check.addEventListener('change', function () {
-        toggleTask(task.id);
+        toggleTask(task.id, task.done);
       });
 
       // Label
@@ -93,41 +118,4 @@
       taskList.appendChild(li);
     });
   }
-
-  function toggleTask(id) {
-    tasks = tasks.map(function (t) {
-      return t.id === id ? { id: t.id, text: t.text, done: !t.done } : t;
-    });
-    saveTasks();
-    renderList();
-  }
-
-  function removeTask(id) {
-    tasks = tasks.filter(function (t) { return t.id !== id; });
-    saveTasks();
-    renderList();
-  }
-
-  function saveTasks() {
-    localStorage.setItem(STORAGE_TASKS, JSON.stringify(tasks));
-  }
-
-  function loadTasks() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_TASKS)) || [];
-    } catch (e) {
-      return [];
-    }
-  }
-
-  function showTaskError(msg) {
-    erroTask.textContent = msg;
-    taskInput.classList.add('input-erro');
-  }
-
-  function clearTaskError() {
-    erroTask.textContent = '';
-    taskInput.classList.remove('input-erro');
-  }
-
 })();

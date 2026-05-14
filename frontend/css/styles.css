@@ -1,370 +1,378 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    min-height: 100%;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
-    font-family: Inter, Arial, sans-serif;
-    background: #f5f7fb;
-    color: #1f2937;
-    overflow-x: hidden;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  overflow-x: hidden;
 }
 
 /* ── Layout ─────────────────────────────────*/
 .pagina-principal {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* ── Painéis ────────────────────────────────*/
 .painel {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 48px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
 }
 
 /* ── Painel Esquerdo ────────────────────────*/
 .painel-esquerdo {
-    background: #3348ff;
-    color: #ffffff;
+  background: #3348ff;
+  color: #ffffff;
 }
 
 .marca {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
 }
 
 .icone-marca {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .icone-marca--azul {
-    background: #3348ff;
+  background: #3348ff;
 }
 
 .nome-marca {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .nome-marca--escuro {
-    color: #111827;
+  color: #111827;
 }
 
 .conteudo-painel {
-    max-width: 420px;
+  max-width: 420px;
 }
 
 .conteudo-painel h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.12;
-    margin-bottom: 18px;
-    letter-spacing: -0.5px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.12;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
 }
 
 .conteudo-painel p {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.97rem;
-    line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.97rem;
+  line-height: 1.7;
 }
 
 .rodape-painel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-    gap: 16px;
-    flex-wrap: wrap;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
 }
 
 .rodape-painel a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
 
 .rodape-painel a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ── Painel Direito ────────────────────────*/
 .painel-direito {
-    background: #ffffff;
-    align-items: center;
-    justify-content: center;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── Caixa de Login ────────────────────────*/
 .caixa-login {
-    width: 100%;
-    max-width: 420px;
-    margin: auto;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
 }
 
 /* Brand para mobile - escondida no desktop */
 .marca-mobile {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 28px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
 .cabecalho-login h2 {
-    margin-bottom: 10px;
-    font-size: 1.9rem;
-    letter-spacing: -0.4px;
-    font-weight: 700;
-    color: #111827;
-
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  color: #111827;
 }
 
 .cabecalho-login p {
-    color: #6b7280;
-    line-height: 1.75;
-    font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.75;
+  font-size: 0.9rem;
 }
 
 /* ── Form ───────────────────────────────────────────────── */
 .formulario-login {
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .grupo-campo {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.formulario-login input[type="email"],
-.formulario-login input[type="password"] {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-family: Inter, Arial, sans-serif;
-    background: #ffffff;
-    color: #111827;
-    outline: none;
-    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+.formulario-login input[type='email'],
+.formulario-login input[type='password'] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: Inter, Arial, sans-serif;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.formulario-login input[type="email"]:focus,
-.formulario-login input[type="password"]:focus {
-    border-color: #3348ff;
-    box-shadow: 0 0 0 3px rgba(51, 72, 255, 0.1);
+.formulario-login input[type='email']:focus,
+.formulario-login input[type='password']:focus {
+  border-color: #3348ff;
+  box-shadow: 0 0 0 3px rgba(51, 72, 255, 0.1);
 }
 
 .campo-senha {
-    position: relative;
+  position: relative;
 }
 
 .campo-senha input {
-    padding-right: 46px;
+  padding-right: 46px;
 }
 
 .alternar-senha {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #6b7280;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 }
 
 .linha-formulario {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .rotulo-checkbox {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.88rem;
-    color: #374151;
-    cursor: pointer;
-    user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
 }
 
-.checkbox-input { 
-    display: none; 
+.checkbox-input {
+  display: none;
 }
 
 .checkbox-box {
-    width: 16px;
-    height: 16px;
-    border: 1.5px solid #d1d5db;
-    border-radius: 4px;
-    background: #ffffff;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s ease, border-color 0.15s ease;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 4px;
+  background: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .checkbox-input:checked + .checkbox-box {
-    background: #3348ff;
-    border-color: #3348ff;
+  background: #3348ff;
+  border-color: #3348ff;
 }
 
 .checkbox-input:checked + .checkbox-box::after {
-    content: '';
-    display: block;
-    width: 9px;
-    height: 5px;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: translateY(-1px) rotate(-45deg);
+  content: '';
+  display: block;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translateY(-1px) rotate(-45deg);
 }
 
 .link-esqueci {
-    color: #3348ff;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    white-space: nowrap;
+  color: #3348ff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .link-esqueci:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .botao-principal {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: #3348ff;
-    color: #ffffff;
-    font-family: Inter, Arial, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.18s ease, box-shadow 0.18s ease;
-    box-shadow: 0 2px 12px rgba(51, 72, 255, 0.28);
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #3348ff;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+  box-shadow: 0 2px 12px rgba(51, 72, 255, 0.28);
 }
 
 .botao-principal:hover {
-    background: #2337ee;
-    box-shadow: 0 4px 18px rgba(51, 72, 255, 0.36);
+  background: #2337ee;
+  box-shadow: 0 4px 18px rgba(51, 72, 255, 0.36);
 }
 
 .divisor {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #9ca3af;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .divisor::before,
 .divisor::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #e5e7eb;
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
 }
 
 .botoes-sociais {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .botao-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 16px;
-    border: 1.5px solid #d1d5db;
-    border-radius: 10px;
-    background: #ffffff;
-    color: #111827;
-    font-family: Inter, Arial, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .botao-social:hover {
-    border-color: #d1d5db;
-    background: #f9fafb;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  border-color: #d1d5db;
+  background: #f9fafb;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
 }
 
 .icone-social {
-    width: 20px;
-    height: 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    line-height: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .icone-social svg {
-    width: 20px;
-    height: 20px;
-    display: block;
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 /*────────── Texto do footer ──────────*/
 .texto-registro {
-    text-align: center;
-    color: #6b7280;
-    font-size: 0.95rem;
-    margin-top: 16px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-top: 16px;
 }
 
 .texto-registro a {
-    color: #3348ff;
-    text-decoration: none;
+  color: #3348ff;
+  text-decoration: none;
 }
 
 .texto-registro a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -372,9 +380,9 @@ body {
    ───────────────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-    .conteudo-painel h1 {
-        font-size: 2rem;
-    }
+  .conteudo-painel h1 {
+    font-size: 2rem;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -382,54 +390,54 @@ body {
    ───────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-    body {
-        background: #f3f4f6;
-    }
- 
-    .pagina-principal {
-        display: block;
-        min-height: 100vh;
-    }
- 
-    /* Esconde opainel azul no mobile */
-    .painel-esquerdo {
-        display: none;
-    }
- 
-    /* Painel direito ocupa a tela inteira */
-    .painel-direito {
-        width: 100%;
-        min-height: 100vh;
-        padding: 40px 16px;
-        background: #f3f4f6;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding-top: 48px;
-    }
- 
-    /* Card flutuante no mobile */
-    .caixa-login {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 36px 28px;
-        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
-        max-width: 420px;
-        width: 100%;
-    }
- 
-    /* Mostra a brand no mobile */
-    .marca-mobile {
-        display: flex;
-    }
- 
-    .cabecalho-login h2 {
-        text-align: center;
-    }
- 
-    .cabecalho-login p {
-        text-align: center;
-    }
+  body {
+    background: #f3f4f6;
+  }
+
+  .pagina-principal {
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* Esconde opainel azul no mobile */
+  .painel-esquerdo {
+    display: none;
+  }
+
+  /* Painel direito ocupa a tela inteira */
+  .painel-direito {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 16px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 48px;
+  }
+
+  /* Card flutuante no mobile */
+  .caixa-login {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 36px 28px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+    max-width: 420px;
+    width: 100%;
+  }
+
+  /* Mostra a brand no mobile */
+  .marca-mobile {
+    display: flex;
+  }
+
+  .cabecalho-login h2 {
+    text-align: center;
+  }
+
+  .cabecalho-login p {
+    text-align: center;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -437,51 +445,51 @@ body {
    ───────────────────────────────────────────────────────── */
 
 @media (max-width: 480px) {
-    .painel-direito {
-        padding: 24px 12px;
-    }
- 
-    .caixa-login {
-        padding: 28px 20px;
-        border-radius: 16px;
-    }
- 
-    .botoes-sociais {
-        grid-template-columns: 1fr;
-    }
- 
-    .linha-formulario {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
- 
-    .link-esqueci {
-        align-self: flex-end;
-    }
+  .painel-direito {
+    padding: 24px 12px;
+  }
+
+  .caixa-login {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .botoes-sociais {
+    grid-template-columns: 1fr;
+  }
+
+  .linha-formulario {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .link-esqueci {
+    align-self: flex-end;
+  }
 }
 
 /* ── Validation states ──────────────────────────────────── */
-.formulario-login .grupo-campo input { 
-    width: 100%;
-    border: 1.5px solid #e5e7eb;
-    appearance: none;
-    height: 100%;
-    padding: 12px 14px;
-    border-radius: 10px;
+.formulario-login .grupo-campo input {
+  width: 100%;
+  border: 1.5px solid #e5e7eb;
+  appearance: none;
+  height: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
 }
 .campo-erro .field__input,
 .campo-erro .grupo-campo input,
 .campo-erro input {
-    border-color: #ef4444 !important;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
 }
- 
+
 .msg-erro {
-    display: block;
-    font-size: 0.78rem;
-    color: #ef4444;
-    margin-top: 4px;
-    min-height: 1em;
-    font-weight: 400;
+  display: block;
+  font-size: 0.78rem;
+  color: #ef4444;
+  margin-top: 4px;
+  min-height: 1em;
+  font-weight: 400;
 }

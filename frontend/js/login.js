@@ -1,15 +1,18 @@
+import { showError, clearError } from './utils/uiHelpers.js';
+import { isValidEmail } from './utils/validation.js';
+import { STORAGE_USER } from './utils/storage.js';
+import { loginUser } from './services/authService.js';
+
 (function () {
   'use strict';
 
-  const API_URL = 'http://localhost:3000/users';
-
-  const form        = document.getElementById('formLogin');
-  const emailInput  = document.getElementById('email');
-  const passInput   = document.getElementById('password');
-  const erroEmail   = document.getElementById('erroEmail');
-  const erroPass    = document.getElementById('erroPassword');
+  const form = document.getElementById('formLogin');
+  const emailInput = document.getElementById('email');
+  const passInput = document.getElementById('password');
+  const erroEmail = document.getElementById('erroEmail');
+  const erroPass = document.getElementById('erroPassword');
   const btnVerSenha = document.getElementById('btnVerSenha');
-  const msgSucesso  = document.getElementById('msgSucesso');
+  const msgSucesso = document.getElementById('msgSucesso');
 
   const params = new URLSearchParams(window.location.search);
   if (params.get('registered') === 'true') {
@@ -47,33 +50,24 @@
     const password = passInput.value;
 
     try {
-      // busca apenas pelo email
-      const res = await fetch(`${API_URL}?email=${encodeURIComponent(email)}`);
-      const users = await res.json();
+      const result = await loginUser(email, password);
 
-      if (users.length === 0) {
-        showError(emailInput, erroEmail, 'User not found');
+      if (!result.success) {
+        if (result.field === 'email') {
+          showError(emailInput, erroEmail, result.message);
+        } else {
+          showError(passInput, erroPass, result.message);
+        }
         return;
       }
 
-      const user = users[0];
-
-      // valida senha no js
-      if (user.password !== password) {
-        showError(passInput, erroPass, 'Invalid password');
-        return;
-      }
-
-      // ✅ Login OK
-      localStorage.setItem('todo_user', user.email);
+      localStorage.setItem(STORAGE_USER, JSON.stringify(result.user));
       window.location.href = 'dashboard.html';
-
     } catch (err) {
       console.error(err);
       showError(passInput, erroPass, 'Server error. Try again.');
     }
   });
-
 
   // ── Validação ─────────────────────────────────────────
   function validate() {
@@ -99,19 +93,4 @@
 
     return valid;
   }
-
-  function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  function showError(input, span, message) {
-    input.closest('.grupo-campo').classList.add('campo-erro');
-    span.textContent = message;
-  }
-
-  function clearError(input, span) {
-    input.closest('.grupo-campo').classList.remove('campo-erro');
-    span.textContent = '';
-  }
-
 })();
